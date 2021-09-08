@@ -1,0 +1,51 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <form action="simpleform.html" method="GET" class="wufoo">
+            <!--Tieu de form-->
+            <h1> <strong> Order Form</strong> </h1>
+
+            <h4>What would you like to buy?</h4>
+            
+            <!--tuy chon A,B,C-->
+            <select>
+                <option value="   ">A</option>
+                <option>B (+ 0.5$)</option>
+                <option>C (+ 0.5$)</option>
+            </select>
+
+            <!--tuy chon kieu radio-->
+            <h4>How many would you like to order?</h4>
+            <input type="radio" name="rd" /> 1 - $10 <br>
+            <input type="radio" name="rd" /> 2 - $20 <br>
+            <input type="radio" name="rd" /> 3 - $25 <br>
+
+            <!--Nhap ten-->
+            <h4> Name <span style="color: red;">*</span></h4>
+            <input type="text" name="FirstName" size="15" placeholder="FirstName">
+            <input type="text" name="LastName" size="15" placeholder="LastName">
+
+            <!--Nhap email-->
+            <h4>Email</h4>
+            <input type="text" name="email" size="35" placeholder="Email">
+
+            <!--Nhap phone number-->
+            <h4>Phone Number</h4>
+            <input type="text" name="phone1" size="5"> -
+            <input type="text" name="phone2" size="5"> -
+            <input type="text" name="phone3" size="5">
+            <br>
+            <br>
+            <!--Nut Submit-->
+            <p><input type="button" name="btsubmit" value="Summit"></p>
+            <style>
+                .wufoo{
+                    font-family: "lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif ;
+                }
+            </style>
+        </form>
+    </body>
+</html>
