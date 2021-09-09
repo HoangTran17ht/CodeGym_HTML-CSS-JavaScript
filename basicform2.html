@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký học viên</title>
+</head>
+<body>
+    <table style="background-color: rgba(255, 231, 152, 0.945);">
+        <form action="basicform2.html" method="POST">
+            <!-- Dòng 1: tiêu đề -->
+            <tr style=" height: 30px; ;background-color: rgb(179, 228, 223);">
+                <th style="color: rgb(40, 54, 255);" colspan="5">ĐĂNG KÝ HỌC VIÊN</th>
+            </tr>
+
+            <!-- Dòng 2: Họ và tên -->
+            <tr>
+                <td style="color: rgb(14, 38, 255);">Họ và tên</td>
+                <td>
+                    <input type="text" name="yourname">
+                </td>
+            </tr>
+            
+            <!-- Dòng 3: Ngày sinh -->
+            <tr>
+                <td style="color: rgb(14, 38, 255);">Ngày sinh</td>
+                <td>
+                    <input type="date" max="2004-12-31" name="dateofbirth">
+                    
+                </td>
+
+            </tr>
+            
+            <!-- Dòng 4: Giới tính -->
+            <tr>
+                <td style="color: rgb(14, 38, 255);">Giới tính</td>
+                <td>
+                    <input type="radio" name="sex" value="Nam">Nam
+                    <input type="radio" name="sex" value="Nữ">Nữ
+                </td>
+
+            </tr>
+            
+            <!-- Dòng 5:Địa chỉ -->
+            <tr>
+                <td style="color: rgb(14, 38, 255);" rowspan="2">Địa chỉ</td>
+                <td rowspan="2">
+                    <input type="text" name="address">
+                </td>
+
+            </tr>
+
+            <!-- Dòng 6: địa chỉ -->
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            
+            <!-- Dòng 7:Lớp -->
+            <tr>
+                <td style="color: rgb(14, 38, 255);">Lớp</td>
+                <td>
+                    <select name="class" id="" >
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                </td>
+
+            </tr>
+            
+            <!-- Dòng 8:Email -->
+            <tr>
+                <td style="color: rgb(14, 38, 255);">Email</td>
+                <td>
+                    <input type="email" name="email">
+
+                </td>
+
+            </tr>
+            
+            <!-- Dòng 9: Điện thoại -->
+            <tr>
+                <td style="color: rgb(14, 38, 255);">Điện thoại</td>
+                <td>
+                    <input type="phone" name="phone">
+
+                </td>
+            </tr>
+            
+            <!-- Dòng 10: Button -->
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Đăng ký">
+            
+                    <input type="reset" value="Nhập lại">
+
+                </td>
+            </tr>
+            
+        </form>
+    </table>
+</body>
+</html>
