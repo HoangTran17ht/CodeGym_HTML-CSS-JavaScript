@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tờ khai y tế</title>
+</head>
+<body style="background-color: rgb(255, 255, 255);">
+    <h1 style="text-align: center;">Tờ khai y tế/Vietnam Health Declaration</h1>
+    <table align="center" style="  background-color: rgb(255, 255, 255);">
+        <!--width: 1150px; height: 3000px;-->
+        <br><br><br><br>
+        <form action="tokhaiyte.html" method="POST">
+        
+        
+            <!-- Tiêu đề -->
+            <table>
+                <tr>
+                    <h3 style="text-align: center;">TỜ KHAI Y TẾ ĐỐI VỚI NGƯỜI NHẬP CẢNH</h3>
+                </tr>
+                <tr>
+                    <h3 style="text-align: center;">ĐÂY LÀ TÀI LIỆU QUAN TRỌNG, THÔNG TIN CỦA ANH/CHỊ SẼ GIÚP CƠ QUAN Y TẾ LIÊN LẠC KHI CẦN THIẾT ĐỂ PHÒNG CHỐNG DỊCH BỆNH TRUYỀN NHIỄM</h3>
+                </tr>
+                <tr>
+                    <h4 style="color: red; text-align: center;">Khuyến cáo: Khai báo thông tin sai là vi phạm pháp luật Việt Nam và có thể xử lý hình sự</h4>
+                </tr>
+            </table>
+
+        
+            <!-- Đối tượng - Cửa khẩu - Họ tên -->
+            <table>
+                <tr>
+                    <th>
+                        Đối tượng <span style="color: red;">(*)</span>
+                    </th>
+                    <th>
+                        Cửa khẩu <span style="color: red;">(*)</span>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="Object" id="">
+                            <option value="Chuyên gia">Chuyên gia</option>
+                            <option value="Người Việt Nam">Người Việt Nam</option>
+                            <option value="Học sinh/Sinh viên quốc tế">Học sinh/Sinh viên quốc tế</option>
+                            <option value="Khác">Khác</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="Gate " id="">
+                            <option value="Cha lo">Cha lo</option>
+                            <option value="Hữu nghị">Hữu nghị</option>
+                            <option value="Sân bay Nội Bài">Sân bay Nội Bài</option>
+                            <option value="Sân bay Tân Sơn Nhất">Sân bay Tân Sơn Nhất</option>
+                            
+                        </select>
+                    </td>
+                </tr>
+                    <th>Họ tên (ghi chữ IN HOA) <span style="color: red;">(*)</span></th>
+                <tr>
+                <tr>
+                    <td>
+                        <input type="text" name="yourname">
+                    </td>
+                    
+                </tr>
+
+                
+            </table>
+            
+            
+        <!-- Năm sinh - Giới tính - QUốc tịch -->
+            <table>
+                <tr>
+                    <th>Năm sinh <span style="color: red;">(*)</span></th>
+                    <th>Giới tính<span style="color: red;">(*)</span></th>
+                    <th>Quốc tịch<span style="color: red;">(*)</span></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <input name="dateofbirth" type="number" min="1900" max="2021" name="year">
+                    </th>
+                    <th>
+                        <select name="Gender" id="">
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                            <option value="Khác">Khác</option>
+                        </select>
+                    </th>
+                    <th>
+                        <input type="country" name="Nationality"> 
+                    </th>
+                </tr>
+            </table>
+
+            <table>
+                
+            </table>
+
+            <table>
+                
+            </table>
+
+            
+            
+        </form>
+    </table>
+</body>
+</html>

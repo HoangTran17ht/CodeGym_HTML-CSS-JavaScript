@@ -1,30 +1,38 @@
-1.FORM
-<form action="URL" name="form-name">
+I.FORM
+1. <form action="URL" name="form-name">
 Thuộc tính action:
 
 Thuộc tính method - quy định cách thức dữ liệu được gửi lên server.
 Phương thức POST và GET.
 GET: hiển thị trên thanh địa chỉ - công khai - dữ liệu nhỏ.
 POST: k hiển thị - bảo mật - dữ liệu lớn.
-Thẻ <fieldset>
+
+2.Thẻ <fieldset>
 Thẻ <legend>
 
-Thẻ <input>
-thuộc tính name:
-thuộc tính disabled:
-thuộc tính value:
-thuộc tính type:
-	text:
-	password:
-	submit:
-	reset:
-	radio: chỉ được lựa chọn 1.
-	checkbox: được lựa chọn nhiều.
-	button:
-	file
-	date
-	Placeholder
-	Hidden
+3. Thẻ <input>
+	- thuộc tính name:
+	- thuộc tính disabled:
+	- thuộc tính value:
+	- thuộc tính type:
+		+ text:
+		+ password:
+		submit:
+		reset:
+		radio: chỉ được lựa chọn 1.
+		checkbox: được lựa chọn nhiều.
+		button:
+		file
+		date
+		Placeholder
+		Hidden
+4. Thẻ <a>
+	Thuộc tính href(hyperlink reference)
+		+ inside project: Ctrl + space
+		+ outside project:
+		+ dowload
+	Thuộc tính target (blank) 
+	
 
 Thẻ <select> - <option>
 	thuộc tính multiple
