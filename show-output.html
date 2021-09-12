@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị đầu ra</title>
+</head>
+<body>
+
+    <!-- Sử dụng hàm alert() -->
+    <input type="submit" value="Click me!" onclick="showMessage1(); ">
+    <script>
+        function showMessage1(){
+            alert('Xin chào!');
+        }
+    </script>
+
+    <br><br><br><hr><br><br><br>
+<!-- Sử dụng thẻ HTML -->
+    <div id="messageDiv"></div>
+    <input type="submit" value="Click me!" onclick="showMessage2();">
+    <script>
+        function showMessage2(){
+            document.getElementById('messageDiv').innerHTML='Xin chào!';
+        }
+    </script>
+
+
+    <br><br><br><hr><br><br><br>
+<!-- Sử dụng hàm document.write() -->
+    <input type="submit" value="Click me!" onclick="showMessage3();">
+    <script>
+        function showMessage3(){
+            document.write("Xin chào!");
+        }
+    </script>
+
+
+    <br><br><br><hr><br><br><br>
+<!-- Sử dụng hàm console.log(): -->
+<input type="submit" value="Click me!" onclick="showMessage4();">
+<script>
+    function showMessage4(){
+        console.log('Xin chào!');
+    }
+</script>
+</body>
+</html>
