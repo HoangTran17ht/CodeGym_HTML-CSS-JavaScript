@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>medium score & total score</title>
+</head>
+<body>
+    <script>
+    let Physics = Number(prompt("Physics score = ",  '')) ;
+    let Chemistry = Number(prompt("Chemistry score = ",  ''));
+    let Biology = Number(prompt("Biology score = ",  ''));
+
+    document.write("Physics score = ",Physics);
+    document.write("<br>");
+
+    document.write("Chemistry score = ",Chemistry);
+    document.write("<br>");
+
+    document.write("Biology score = ",Biology);
+    document.write("<br>");
+    document.write("<br>");
+
+    document.write("Total score = ",(Physics + Chemistry + Biology ));
+    document.write("<br>");
+    document.write("Medium score = ",(Physics + Chemistry + Biology )/3);
+    </script>
+    
+</body>
+</html>
