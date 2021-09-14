@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency of convert</title>
+</head>
+<body>
+    <html>
+        <table>
+            <tr>
+                <th>Amount</th>
+                <th>From Currency</th>
+                <th>To Currency</th>
+                <th rowspan="2">
+                    <input type="">
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="amount">
+                </td>
+                <td>
+                    <select name="From">
+                        <option name="VietNam">VietNam</option>
+                        <option name="USD">USD</option>
+                        <option name="Euro">Euro</option>
+                        <option name="JPY">JPY</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="To">
+                        <option name="USD">USD</option>
+                        <option name="VietNam">VietNam</option>
+                        <option name="Euro">Euro</option>
+                        <option name="JPY">JPY</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>   
+    </html>
+</body>
+</html>
+<script>
+    function convert(){
+        if(From == To)
+
+        let Result = 0;
+        if(From == "VietNam")
+        {
+            if(To == "USD") Result = (amount / 21000) + "USD"
+            else if(To == "VietNam") Result = amount + "VND"
+            else if(To == "Euro") Result = (amount / 21000) + "Euro"
+            else if(To == "USD") Result = (amount / 21000) + "USD" 
+        }
+    }
+    
+</script>
