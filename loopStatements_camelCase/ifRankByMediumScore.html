@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rank by medium score</title>
+</head>
+<body>
+    <script>
+        // Nhập đầu vào va kiểm tra điều kiện
+        let mediumScore = parseFloat(prompt("Medium score = "));
+        if (mediumScore <= 10 && mediumScore >= 0) {
+
+            // Trường hợp nhập đúng (điểm trong khoảng 0-10)
+            if (mediumScore >= 9) {
+                    alert("Xếp hạng loại xuất sắc!");
+                
+            }
+            else{
+                if (mediumScore >= 8) {
+                    alert("Xếp hạng loại giỏi!");
+                
+                }
+                else{
+                    if (mediumScore >= 7) {
+                        alert("Xếp hạng loại khá!");
+                    }
+                    else{
+                        if (mediumScore >= 6) {
+                            alert("Xếp hạng loại trung bình khá!");
+                        
+                        }
+                        else{
+                            if (mediumScore >= 5) {
+                                alert("Xếp hạng loại trung bình!");
+                            }
+                            else{
+                                alert("Xếp hạng loại yếu!");
+                            }
+                        }
+                    } 
+                }
+            }
+        } 
+
+        // Trường hợp nhập sai
+        else {
+            alert("Nhập sai(điểm chỉ nằm trong khoảng 0-10)");  
+        }
+    </script>
+</body>
+</html>
