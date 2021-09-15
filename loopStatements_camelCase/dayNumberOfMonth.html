@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day number of month</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <input type="text">
+            </td>
+            <td>
+                <input type="button" value="Tính số ngày" onclick="count()">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
+<script>
+    function count() {
+        let month = Number(document.getElementsByTagName("input")[0].value);
+        let dayNumber = "invalid value!";
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                dayNumber = "31 ngày";
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                dayNumber = "30 ngày";
+                break;
+            case 2:
+                dayNumber = "28 hoặc 29 ngày";
+                break;
+        }
+        if (dayNumber == "invalid value!") {
+        document.getElementsByTagName("td")[2].innerHTML = `<h3>${dayNumber}</h3>`;   
+        }
+        else
+        document.getElementsByTagName("td")[2].innerHTML = `<h3>Tháng ${month} có ${dayNumber}.</h3>`;
+        
+    }
+</script>
