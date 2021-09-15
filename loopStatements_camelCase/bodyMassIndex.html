@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body mass index</title>
+</head>
+<body>
+    <script>
+        let weight = Number(prompt("Weight(kg): "));
+        let height = Number(prompt("Height(m): "));
+
+        let BMI = weight / (height*height);
+
+        if (BMI < 18.5) {
+            alert("Underweight!");
+        } else if (BMI < 25) {
+                alert("Normal!");
+            } else if (BMI < 30) {
+                    alert("Overweight!");
+                } else {
+                    alert("Obese!");
+                }
+    </script>
+</body>
+</html>

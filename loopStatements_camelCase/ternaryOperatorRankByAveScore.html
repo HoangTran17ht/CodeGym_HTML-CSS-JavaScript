@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rank by Average score</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <h4>Average score:</h4>
+            </td>
+            <td>
+                <input type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Rank" onclick="rank()">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                
+            </td>
+        </tr>
+
+    </table>
+</body>
+
+</html>
+<script>
+    function rank() {
+        let averageScore = Number(document.getElementsByTagName("input")[0].value);
+        let message = (averageScore > 10 || averageScore < 0) ? "invalid value" : 
+                        averageScore >= 9 ? "Excellent!" : 
+                            averageScore >= 8 ? "Good!" : 
+                                averageScore >= 7 ? "Pretty good!" : 
+                                    averageScore >= 5 ? "Medium!" : 
+                                        averageScore >= 0 ? "Bad!" : 
+                                            "invalid value";
+        document.getElementsByTagName("td")[3].innerHTML = `<h3>${message}</h3>`;
+    }
+    
+</script>

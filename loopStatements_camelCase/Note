@@ -1,0 +1,6 @@
+Trần và sàn
+    number = 6.7.
+    Trần: số nguyên nhỏ nhất mà lớn hơn number. (JS: math.cell(number) ) = 7.
+    Sàn: số nguyên lớn nhất mà nhỏ hơn number. (JS: math.cell(number) ) = 6.
+    Vd: 6.7 => trần = 7 , sàn = 6.
+

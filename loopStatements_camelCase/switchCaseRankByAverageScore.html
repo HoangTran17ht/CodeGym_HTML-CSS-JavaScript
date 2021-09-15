@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rank by Average score</title>
+</head>
+<body>
+    <script>
+        // Nhập và kiểm tra điều kiện
+        let averageScore = Number(prompt("Medium score = "));
+        if (averageScore <= 10 && averageScore >= 0) {
+
+            // Trường hợp nhập đúng (điểm trong khoảng 0-10)
+            let averageScore1 = parseInt(averageScore);
+            switch (averageScore1) {
+                case 10:
+                case 9:
+                    alert("Điểm trung bình: "+ averageScore + "\nExcellent!");
+                    break;
+                case 8:
+                    alert("Điểm trung bình: "+ averageScore + "\nGood!");
+                    break;
+                case 7:
+                    alert("Điểm trung bình: "+ averageScore + "\nPretty good!");
+                    break;
+                case 6:
+                    // alert("Điểm trung bình: "+ averageScore + "\nXếp hạng loại trung bình khá!");
+                    // break;
+                case 5:
+                    alert("Medium!");
+                    break;
+                default:
+                    alert("Bad!");
+                    break;
+            }
+        }
+        // Trường hợp nhập sai
+        else {
+            alert("invalid value\n- Điểm thuộc kiểu số thực(số nguyên hoặc số thập phân).\n- Điểm phải nằm trong khoảng 0-10. \n- Sử dụng dấu phẩy '.' (không sử dụng dấu ',').");  
+        }
+    </script>
+</body>
+</html>
