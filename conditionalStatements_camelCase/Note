@@ -4,3 +4,4 @@ Trần và sàn
     Sàn: số nguyên lớn nhất mà nhỏ hơn number. (JS: math.cell(number) ) = 6.
     Vd: 6.7 => trần = 7 , sàn = 6.
 
+Hàm eval: tính cả biểu thức.

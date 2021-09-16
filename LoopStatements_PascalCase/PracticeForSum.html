@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum form 1 to N</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>N = </th>
+            <td><input type="text" align:center;></td>
+        </tr>
+        <tr>
+            <th>
+                <input type="button" value="Sum = " onclick="Sum()">
+            </th>
+            <td>
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
+<script>
+
+    function Sum() {
+        let N = Number(document.getElementsByTagName('input')[0].value);
+        let Sum = 0;
+
+        for (let i = 0; i <= N; i++) {
+            Sum += i;
+        }
+        document.getElementsByTagName("td")[1].innerHTML = `<h3>${Sum}</h3>`;
+
+    }
+</script>

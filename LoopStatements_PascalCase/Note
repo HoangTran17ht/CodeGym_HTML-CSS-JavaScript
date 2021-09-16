@@ -1,0 +1,36 @@
+2 loại vòng lặp:
+    Vòng lặp biết trước số lần lặp.
+    Vòng lặp k biết trước số lần lặp.
+Lưu ý của vòng lặp:
+    Hữu hạn(tính dừng).
+
+Các dạng biến thể của for:
+    1.Khối lệnh khởi tạo được khai báo trước.
+        VD: let i = 1;
+        for(;i < 10;++i){
+            Khối lệnh;
+        }
+
+        khác: khi kt vòng lặp, biến i vẫn tồn tại(có thể sử dụng tiếp).
+
+    2. Khối lệnh trong vòng lặp (4) làm luôn phần (3)(khối lệnh sau mỗi lần lặp).
+        VD: for(let i = 1; i < 10;){
+            Khối lệnh trong vòng lặp;
+            ++i;
+        } 
+
+    3. Vòng lặp lùi (--i).
+
+    4. Khối lệnh khởi tạo(1) có 2 lệnh trở lên.
+        VD: for(i = 1,Sum = 0; i < 10; ++i){
+            Sum += i;
+        }
+    
+    5. Thêm điều kiện dừng ở trong khối lệnh vòng lặp(3).
+        Sử dụng lệnh break;
+    
+    6. Sử dụng lệnh continue; để thoát lần lặp hiện tại.
+
+    7. for(;;){Khối lệnh trong vòng lặp(3)}
+        Khối lệnh khởi tạo(1) được khai báo trước.
+        Khối lệnh trong vòng lặp(3) bao gồm cả biểu thức điều kiện(2) và khối lệnh sau mỗi lần lặp(4).
