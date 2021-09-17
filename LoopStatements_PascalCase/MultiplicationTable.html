@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication table</title>
+</head>
+
+<body>
+    <script>
+        // Khởi tạo biến multiplication sẽ chứa table multiplication table, định dạng table
+        let multiplication = "<table border='1' width='1000' cellspacing='1' cellpadding='3'>";
+
+        // Vòng lặp tạo từng dòng.
+        for (let a = 2; a <= 9; a++) {
+            multiplication += "<tr>";
+            
+            // Vòng lặp tạo từng ô.
+            for (let b = 1; b <= 9; b++) {
+                multiplication += `<td> ${a}x${b}=${a * b} </td>`;
+            }
+
+            multiplication += "</tr>";
+        }
+        multiplication += "</table>";
+
+        // in ra table.
+        document.write(multiplication);
+    </script>
+</body>
+
+</html>

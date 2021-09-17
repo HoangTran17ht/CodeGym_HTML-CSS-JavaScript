@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output first 20 prime number by loop For</title>
+</head>
+
+<body>
+    <script>
+        let count = 0;
+        let output = "First 20 prime number: ";
+
+        for (let x = 2; count < 20; x++) {
+            for (let i = 2; ; i++) {
+                if (i > Math.sqrt(x)) {
+                    if (count == 19) {
+                        output += `${x}.`;
+                    }
+                    else {
+                        output += `${x}, `;
+                    }
+                    count += 1;
+                    break;
+                }
+                if (x % i == 0) {
+                    break;
+                }
+            }
+        }
+        document.write(output);
+    </script>
+</body>
+
+</html>

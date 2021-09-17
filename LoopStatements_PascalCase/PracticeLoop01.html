@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice loop 01</title>
+</head>
+
+<body>
+
+    <!-- Exercise 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên. -->
+    <table border="1">
+        <tr>
+            <td colspan="2" align="center">
+                <h3>Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên</h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="300px" align="center" style="color: blue;">
+                <h4>Result</h4>
+            </td>
+            <td width="500px" align="center">
+                <p id="exe3"></p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5. -->
+    <table border="1">
+        <tr>
+            <td colspan="2" align="center">
+                <h3>Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5</h3>
+            </td>
+        </tr>
+        <br><br><br>
+        <tr>
+            <td width="300px" align="center" style="color: blue;">
+                <h4>Result</h4>
+            </td>
+            <td width="500px" align="center">
+                <p style="font-size: 25px;" id="exe4"></p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci. -->
+    <table border="1">
+        <tr>
+            <td colspan="2" align="center">
+                <h3>Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci</h3>
+            </td>
+        </tr>
+        <br><br><br>
+        <tr>
+            <td width="300px" align="center" style="color: blue;">
+                <h4>Result</h4>
+            </td>
+            <td width="500px" align="center">
+                <p style="font-size: 25px;" id="exe5"></p>
+            </td>
+        </tr>
+    </table>
+
+
+    <!-- Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên. -->
+</body>
+
+</html>
+<script>
+    // Exercise 3 & 4 & 5: Fibonacci number.
+    let output = "1, 1, ";
+    let a = 1, b = 1;
+    let multiples = -1; //Biến chứa số fibonacci đầu tiên chia hết cho 5.
+    let sum = a + b; //biến tính tổng 20 số fibonaci đầu tiên (exe 5).
+    for (let i = 3; i <= 20; i++) {
+        // Tìm số fibonacci tiếp theo
+        if (a > b) {
+            b += a;
+            output += `${b}`;
+            
+            //[exe 5] Tính tổng 20 số fibonacci đầu tiên.
+            sum += b;
+        }
+        else {
+            a += b;
+            output += `${a}`;
+
+            //[exe 5] Tính tổng 20 số fibonacci đầu tiên.
+            sum += a;
+
+        }
+
+        //[exe 4] Tìm số fibinacci đầu tiên chia hết cho 5.
+        if (multiples % 5 != 0 & (a % 5 == 0 || b % 5 == 0)) {
+            if (a % 5 == 0) {
+                multiples = a;
+            }
+            else {
+                multiples = b;
+            }
+        }
+
+        // Tạo dấu ,/. ngăn cách các số fibonacci.
+        if (i < 20) {
+            output += ", ";
+        }
+        else {
+            output += ".";
+
+        }
+    }
+    // print result of exercise 3
+    document.getElementById("exe3").innerHTML = output;
+
+    // print result of exercise 4
+    document.getElementById("exe4").innerText = multiples;
+    
+    // print result of exercise 5
+    document.getElementById("exe5").innerText = sum;
+
+    
+
+</script>
