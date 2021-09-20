@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo mảng 20 element ramdom for 10 to 90</title>
+</head>
+<body>
+    <script>
+        // Khai báo mảng và nhập mảng.
+        let array = [];
+        let max = 90;
+        let min = 10; 
+        for (let i = 0; i < 20; i++) {
+            array[i] = Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // Xuất mảng:
+        document.write(`Hiển thị mảng, các phần tử cách nhau bởi dấu ";"<br>`)
+        for (let i = 0; i < array.length - 1; i++) {
+            document.write(`${array[i]}; `);
+        }
+        document.write(`${array[array.length - 1]}. <hr>`);
+
+        // Hiển thị số nguyên tố
+        document.write(`Hiển thị số nguyên tố: <br>`);
+        for (let i = 0; i < array.length; i++) {
+            let x = 0;
+            for (let j = 2;j <= Math.sqrt(array[i]); j++) {
+                if (array[i] % j == 0) {
+                    x = 1;
+                    break;
+                }
+            }
+            if (x == 0) {
+                document.write(`${array[i]}`);
+                if (i < array.length - 1) {
+                    document.write(`; `);
+                } else {
+                    document.write(`.`);
+                }
+            }
+        }
+
+        // Số lượng số chẵn.
+        document.write(`<hr> Hiển thị số lượng số chẵn: <br>`);
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                ++count;
+            }
+        }
+        document.write(`Số lượng số chẵn: ${count}.`);
+
+        // Tổng các số lẻ.
+        document.write(`<hr> Hiển thị tổng các số lẻ: <br>`);
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 1) {
+                sum += array[i];
+            }
+        }
+        document.write(`Tổng các số lẻ: ${sum}.`);
+
+    </script>
+</body>
+</html>
