@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khai báo mảng 1 chiều</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;color: rgb(47, 104, 209);">Array Methods</h1>
+    <script>
+        let dsLop = ["av", "aF","Af", "b", "c", "CB", "cd","cb"];
+
+
+        // Truy xuất phần tử trong mảng.
+        document.write(`<h3>Truy xuất phần tử trong mảng:</h3>`);
+            document.write(`-- Truy xuất bằng for-in:`);
+            for (let element in dsLop) {
+                document.write(`<br> ${dsLop[element]}`);
+            }
+
+            document.write(`<br><br> -- Truy xuất ngược bằng for:`);
+            for (let i = dsLop.length - 1; i >= 0; --i) {
+                document.write(`<br> ${dsLop[i]}`);
+            }
+
+            document.write(`<br><br> -- Truy xuất bằng for-each: <br>`);
+            dsLop.forEach(function (item, index) {
+                document.write(`${index}-${item}</br>`);
+            });
+
+
+        // Độ dài của mảng.
+        document.write(`<hr><br><h3> -- Độ dài của mảng: `)
+            document.write(`${dsLop.length}</h3>`);
+
+        //////////////////////////////////////////////////
+        // Thêm phần tử.
+        document.write(`<hr><h3>Thêm phần tử.</h3>`);
+            // push(): thêm phần tử vào cuối mảng.
+            document.write(`<br> -- Hàm push(): Thêm phần tử vào cuối mảng ("acc"):`)
+            dsLop.push(`acc`);
+            for (let element in dsLop) {
+                document.write(`<br> ${dsLop[element]}`);
+            }
+
+            // unshift(): Thêm phần tử mới vào đầu mảng.
+            document.write(`<br><br> -- Hàm unshift(): Thêm phần tử vào đầu mảng ("bdc"): `)
+            dsLop.unshift(`bdc`);
+            for (let element in dsLop) {
+                document.write(`<br> ${dsLop[element]}`);
+            }
+        
+            // length: thêm phần tử vào cuối mảng. 
+            document.write(`<br><br> -- Hàm length(): Thêm phần tử vào vị trí length(vị trí cuối mới) ("cbd"):`)
+            dsLop[dsLop.length] = "cbd";
+            for (let element in dsLop) {
+                document.write(`<br> ${dsLop[element]}`);
+            }
+
+        ////////////////////////////////////////////////////////////
+        // Xóa phần tử:
+        document.write(`<hr><h3>Xóa phần tử:</h3>`);
+            // pop(): Xóa phần tử cuối cùng.
+            document.write(`<br> -- Hàm pop(): Xóa phần tử cuối cùng.`)
+            dsLop.pop();
+            for (let element in dsLop) {
+                document.write(`<br> ${dsLop[element]}`);
+            }
+
+            // shift(): Xóa phần tử đầu tiên.
+            dsLop.shift();
+            document.write(`<br><br> -- Hàm shift(): Xóa phần tử đầu tiên bằng.`)
+            for (let element in dsLop) {
+                document.write(`<br> ${dsLop[element]}`);
+            }
+
+        // //////////////////////////////////////////////////////////////////////////////////////////////
+        // Sắp xếp mảng.
+        document.write(`<hr><h3>Sắp xếp mảng</h3>`);
+            // Hàm sort(): abc
+            document.write(`<br> -- Hàm sort(): abc`);
+            dsLop.sort();
+            for (let element in dsLop) {
+                document.write(`<br> ${dsLop[element]}`);
+            }
+
+            // Hàm sort(a-b): 123
+            document.write(`<br> -- Hàm sort(a-b): 123`);
+            dsLop.sort(function (a, b) {
+                return a - b;
+            });
+            for (let element in dsLop) {
+                document.write(`<br> ${dsLop[element]}`);
+            }
+            // Hàm sort(b-a): 321
+            document.write(`<br> -- Hàm sort(b-a): 321`);
+            dsLop.sort(function (a, b) {
+                return b - a;
+            });
+            for (let element in dsLop) {
+                document.write(`<br> ${dsLop[element]}`);
+            }
+
+            // Hàm reverse(): cba123
+            document.write(`<br><br> -- Hàm reverse(): cba123`);
+            dsLop.reverse();
+            for (let element in dsLop) {
+                document.write(`<br> ${dsLop[element]}`);
+            }
+
+            // Hàm reverse(a-b): 321abc
+            document.write(`<br> -- Hàm reverse(a-b): 321abc`);
+            dsLop.reverse(function (a, b) {
+                return a - b;
+            });
+            for (let element in dsLop) {
+                document.write(`<br> ${dsLop[element]}`);
+            }
+
+        // Tạo giá trị ngẫu nhiên cho biến.
+        document.write(`<hr><br><h3> -- Tạo giá trị ngẫu nhiên cho biến:</h3>`);
+            document.write(`-- Gán 1 giá trị ngẫu nhiên vào vị trí dsLop[1]:`);
+            dsLop[1] = Math.random();
+            for (let element in dsLop) {
+                document.write(`<br> ${dsLop[element]}`);
+            }
+            
+            // Chú ý 
+            document.write(`<br> <h4>-- Chú ý: 0 <  Math.random() < 1.</h4>`);
+            document.write(` -- Gán 1 giá trị ngẫu nhiên trong khoảng từ 40 đến 60 vào vị trí dsLop[2]:`);
+            let max = 60;
+            let min = 40;
+            dsLop[2] = Math.floor(Math.random() * (max - min + 1) + min);
+            for (let element in dsLop) {
+                document.write(`<br> ${dsLop[element]}`);
+            }
+
+        // Chuyển mảng thành chuỗi.
+        document.write(`<hr><h3> Chuyển mảng thành chuỗi:</h3>`);
+            // 
+            document.write(` -- Hàm toString(): các phần tử trong mảng ban đầu cách nhau bằng dấu ',' trong chuỗi.`);
+            document.write(`<br> dsLop.toString() = "${dsLop.toString()}"`);
+
+        // // join():
+    </script>
+</body>
+
+</html>

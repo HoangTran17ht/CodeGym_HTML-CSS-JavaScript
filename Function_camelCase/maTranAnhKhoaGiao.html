@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix</title>
+</head>
+
+<body>
+    <!-- Bảng nhập dữ liệu đầu vào: số dòng và số cột của ma trận -->
+    <table style="background-color: rgb(252, 240, 200); margin-top: 150px; margin-left: 250px; margin-bottom: 150px;"
+        border="1" width='800' cellspacing='1' cellpadding='3'>
+        <tr>
+            <td colspan="2" align="center">
+                <h2 style="font-size: 50px;">INPUT DATA</h2>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" width='600px' style="font-size: 30px;"><p>Row number:</p></td>
+            <td>
+                <input type="number" id="rowNumber" width='200px' style="text-align: right; font-size: 40px;">
+            </td>
+
+        </tr>
+        <tr>
+            <td align="center" width='600' style="font-size: 30px;"><p>Columns number:</p></td>
+            <td>
+                <input type="number" id="colNumber" width='200' style="text-align: right; font-size: 40px;">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="button" value="Run" onclick="main()"
+                    style="font-size: 40px; background-color: rgb(230, 106, 114);">
+            </td>
+        </tr>
+    </table>
+
+    <!-- Hiển thị ma trận -->
+    <table id="printOutput" style="margin: 50px;" border='1' width='1000' cellspacing='1' cellpadding='3'>
+    </table>
+
+    <!-- Hiển thị tổng tất cả các phần tử của ma trận -->
+    <table style="margin: 50px;" border='1' width='500' cellspacing='1' cellpadding='3'>
+        <tr>
+            <td width='400' align="center">
+                <h3>Tổng tất cả phần tử của ma trận</h3>
+            </td>
+            <td id="sumAll" width='100' align="center"></td>
+        </tr>
+    </table>
+
+    <!-- Show the largest number -->
+    <table style="margin: 50px;" border='1' width='500' cellspacing='1' cellpadding='3'>
+        <tr>
+            <td width='400' align="center">
+                <h3>The largest number</h3>
+            </td>
+            <td id="largestNumber" width='100' align="center"></td>
+        </tr>
+    </table>
+
+    <!-- Count the number of the largest number -->
+    <table style="margin: 50px;" border='1' width='500' cellspacing='1' cellpadding='3'>
+        <tr>
+            <td width='400' align="center">
+                <h3>The number of the largest number</h3>
+            </td>
+            <td id="countTheNumberOfLargestNumber" width='100' align="center"></td>
+        </tr>
+    </table>
+
+
+    <!-- Hiển thị matrix only prime number -->
+    <table id="printMatrixOnlyPrimeNumber" style="margin: 50px;" border='1' width='1000' cellspacing='1'
+        cellpadding='3'></table>
+
+
+
+
+    <script>
+        function main() {
+            let n = parseInt(document.getElementById("rowNumber").value);
+            let m = parseInt(document.getElementById("colNumber").value);
+            let min = 10;
+            let max = 90;
+            // Nhập ma trận:
+            let matrix = input(n, m, min, max);
+
+            // Hiển thị ma trận:
+            let tableMatrix = output(n, m, matrix);
+            document.getElementById("printOutput").innerHTML = tableMatrix;
+
+            // Tổng tất cả phần tử.
+            let sumAll = calculateSumAll(n, m, matrix);
+            document.getElementById("sumAll").innerHTML = sumAll;
+
+            // Find the largest number
+            let largestNumber = findLargestNumber(n, m, matrix);
+            document.getElementById("largestNumber").innerHTML = largestNumber;
+
+            // Count the number of largest number
+            let count = countTheNumberOfLargestNumber(matrix, largestNumber);
+            document.getElementById("countTheNumberOfLargestNumber").innerHTML = count;
+
+            // Edit matrix only prime number
+            let matrixPrime = matrix;
+            matrixPrime = editMatrixOnlyPrimeNumber(n, m, matrixPrime);
+            let tableMatrixPrime = output(n, m, matrixPrime);
+            document.getElementById("printMatrixOnlyPrimeNumber").innerHTML = tableMatrixPrime;
+
+
+
+
+
+
+
+
+
+
+            // INPUT
+            function input() {
+                let matrix = [];
+                for (let i = 0; i < n; i++) {
+                    matrix[i] = [];
+                    for (let j = 0; j < m; j++) {
+                        matrix[i][j] = Math.floor(Math.random() * (90 - 10 + 1) + 10);
+                    }
+                }
+                return matrix;
+            }
+
+            // OUTPUT
+            function output(n, m, matrix) {
+                let tableMatrix = `<tr><td colspan= "${m}" align="center"><h3>Hiển thị ma trận</h3></td></tr>`;
+                for (let i = 0; i < n; i++) {
+                    tableMatrix += "<tr>";
+                    for (let j = 0; j < m; j++) {
+                        tableMatrix += `<td align = "center"> ${matrix[i][j]} </td>`;
+                    }
+                    tableMatrix += "</tr>";
+                }
+                return tableMatrix;
+            }
+
+            // Sum all
+            function calculateSumAll(n, m, matrix) {
+                let sumAll = 0;
+                for (let i = 0; i < n; i++) {
+                    for (let j = 0; j < m; j++) {
+                        sumAll += matrix[i][j];
+                    }
+                }
+                return sumAll;
+            }
+
+            // Matrix only prime number
+            function editMatrixOnlyPrimeNumber(n, m, matrixPrime) {
+                for (let i = 0; i < n; i++) {
+                    for (let j = 0; j < m; j++) {
+                        for (let x = 2; x <= Math.sqrt(matrixPrime[i][j]); x++) {
+                            if (matrixPrime[i][j] % x == 0) {
+                                matrixPrime[i][j] = "-";
+                                break;
+                            }
+                        }
+                    }
+                }
+                return matrixPrime;
+            }
+
+            // Find the largest number
+            function findLargestNumber(n, m, matrix) {
+                let largestNumber = 0;
+                for (let i = 0; i < n; i++) {
+                    for (let j = 0; j < m; j++) {
+                        if (largestNumber < matrix[i][j]) {
+                            largestNumber = matrix[i][j];
+                        }
+                    }
+                }
+                return largestNumber;
+            }
+
+            // Count the number of largest number
+            function countTheNumberOfLargestNumber(matrix, largestNumber) {
+                let count = 0;
+                for (let i = 0; i < n; i++) {
+                    for (let j = 0; j < m; j++) {
+                        if (largestNumber == matrix[i][j]) {
+                            ++count;
+                        }
+                    }
+                }
+                return count;
+            }
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>
