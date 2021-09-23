@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fin the smallest value in array</title>
+</head>
+
+<body>
+
+
+    <script>
+        // array 1
+        document.write(`Array 1 <br>`);
+        let array1 = [3, 5, 1, 8, -3, 7, 8];
+        smallestValue1 = findTheSmallestValue(array1);
+        if (smallestValue1 == undefined) {
+            document.write(`"Mảng rỗng!"`);
+        } else
+            document.write(`${smallestValue1} <hr>`);
+
+        // array 2
+        document.write(`Array 2 <br>`);
+        let array2 = [7, 12, 6, 9, 20, 56, 89];
+        smallestValue2 = findTheSmallestValue(array2);
+        if (smallestValue2 == undefined) {
+            document.write(`"Mảng rỗng!"`);
+        } else 
+            document.write(`${smallestValue2} <hr>`);
+
+        // array 3
+        document.write(`Array 3 <br>`);
+        let array3 = [];
+        smallestValue3 = findTheSmallestValue(array3);
+        if (smallestValue3 == undefined) {
+            document.write(`"Mảng rỗng!" <hr>`);
+        } else
+            document.write(`${smallestValue3} <hr>`);
+
+        // array 4
+        document.write(`Array 4 <br>`);
+        let array4 = [0, 0, 0, 0, 0, 0];
+        smallestValue4 = findTheSmallestValue(array4);
+        if (smallestValue4 == undefined) {
+            document.write(`"Mảng rỗng!"`);
+        } else
+            document.write(`${smallestValue4} <hr>`);
+
+
+            // Hàm tìm số nhỏ nhất
+        function findTheSmallestValue(array) {
+            let smallestValue = array[0];
+            for (let i = 1; i < array.length; i++) {
+                if (smallestValue > array[i]) {
+                    smallestValue = array[i];
+                }
+            }
+            return smallestValue;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caro game</title>
+</head>
+<body>
+
+    <!-- Table dành cho người chơi -->
+    <table border="1" style="margin: 50px;">
+        <tr>
+            <td style="width: 200px;font-size: 30px; font-weight: 600; text-align: center; background-color: rgba(240, 52, 18, 0.5);">USER 1</td>
+            <td style="width: 50px; text-align: center;">X1 = </td>
+            <td><input type="number" id="x1" ></td>
+            <td style="width: 50px;text-align: center;">Y1 = </td>
+            <td><input type="number" id="y1" ></td>
+            <td><input type="button" onclick="user1(box)" value=" OK "></td>
+            <td id="user1Win" style="color: tomato;font-weight: 600;"></td>
+        </tr>
+        <tr>
+            <td style="width: 200px;font-size: 30px; font-weight: 600; text-align: center; background-color: rgba(116, 250, 243, 0.5);">USER 2</td>
+            <td style="width: 50px;text-align: center;">X2 = </td>
+            <td><input type="number" id="x2"></td>
+            <td style="width: 50px;text-align: center;">Y2 = </td>
+            <td><input type="number" id="y2"></td>
+            <td><input type="button" onclick="user2(box)" value=" OK "></td>
+            <td id="user2Win" style="color: rgb(46, 219, 250);font-weight: 600;"></td>
+        </tr>
+    </table>
+
+    <!-- Table chứa bàn cờ caro -->
+    <table border="1" id="tableGameCaro"></table>
+
+
+    <script>
+        let n = 30;
+        let m = 30;
+        let box = []; //Hàm chứa bàn các phần tử trên bàn caro.
+        let tableBox = ""; //Biến chứa HTMl in ra bàn caro.
+
+
+        // Khởi tạo 
+        for (let i = 0; i < n; i++) {
+                box[i] = [];
+                tableBox += `<tr>`;
+                for (let j = 0; j <m; j++) {
+                    box[i][j] = "-";
+                    tableBox += `<td style="width: 50px;text-align: center;">${box[i][j]}</td>`;
+                }
+                tableBox += `</tr>`;
+            }
+            document.getElementById("tableGameCaro").innerHTML = tableBox;
+
+        // // //         Hàm in bàn caro.        // // // // // // // // // //
+        function print(box) {
+            let tableBox = "";
+            for (let i = 0; i < n; i++) {
+                tableBox += `<tr>`;
+                for (let j = 0; j < m; j++) {
+                    if (box[i][j] == "X") {
+                        tableBox += `<td style="width: 30px;text-align: center; background-color: rgb(230, 49, 49);">${box[i][j]}</td>`;
+                    } else if (box[i][j] == "O") {
+                        tableBox += `<td style="width: 30px;text-align: center; background-color: rgb(71, 249, 255);">${box[i][j]}</td>`;
+                    } else {
+                            tableBox += `<td style="width: 30px;text-align: center;">${box[i][j]}</td>`;
+                        }
+                }
+                tableBox += `</tr>`;
+            }
+            document.getElementById("tableGameCaro").innerHTML = tableBox;
+        }
+
+
+        // // //       Hàm xử lý khi user 1 chọn.        ////////////////////////////////////
+        function user1(box) {
+            let x = document.getElementById("x1").value;
+            let y = document.getElementById("y1").value;
+            box[x][y] = "X";
+            print(box);
+
+            let count1 = countHorizontally(box,x,y);
+            let count2 = countVertically(box,x,y);
+            if (count1 == 5 || count2 == 5) {
+                document.getElementById("user1Win").innerText = "Victory";
+            }
+        }
+
+        // // //         Hàm xử lý khi user 2 chọn.            /////////////////////////////////
+        function user2(box) {
+            let x = document.getElementById("x2").value;
+            let y = document.getElementById("y2").value;
+            box[x][y] = "O";
+            print(box);
+
+            let count1 = countHorizontally(box,x,y);
+            let count2 = countVertically(box,x,y);
+            if (count1 == 5 || count2 == 5) {
+                document.getElementById("user2Win").innerText = "Victory";
+            }
+        }
+
+        //           Hàm đếm các ô liền nhau theo chiều ngang.           ////////////////////////////
+        function countHorizontally(box,x,y) {
+            let count = 1;
+            for (let i = (y + 1); i < (y + 5) && i < m; i++) {
+                if (box[x][i] == box[x][y]) {
+                    count += 1;
+                    if (count == 5) { return count; }
+                } else break;
+            }
+            for (let i = (y-1); i > (y-5) && i >= 0; i--) {
+                if (box[x][i] == box[x][y]) {
+                    count += 1;
+                    if (count == 5) { return count; }
+                } else break;
+            }
+            return count;
+        }
+
+        //            Hàm đếm các ô liền nhau theo chiều dọc.          ///////////////////////////////
+        function countVertically(box,x,y) {
+            let count = 1;
+            for (let i = (x + 1); i < (x + 5) && i < n ; i++) {
+                if (box[i][y] == box[x][y]) {
+                    count += 1;
+                } else break;
+            }
+            for (let i = (x - 1); i > (x - 5) && i >= 0; i--) {
+                if (count >= 5) { return count; }
+                if (box[i][y] == box[x][y]) {
+                    count += 1;
+                } else break;
+            }
+            return count;
+        }
+    </script>
+</body>
+</html>

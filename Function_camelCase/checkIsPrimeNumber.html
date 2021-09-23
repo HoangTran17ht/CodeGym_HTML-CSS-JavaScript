@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check is prime number ?</title>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <td colspan="2">
+                <h3 style="text-align: center;">Kiểm tra số nguyên tố</h3>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; font-weight: 600;">Number:</td>
+            <td><input type="number" id="number" style="text-align: center;"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Is prime number ?" onclick="isPrime()" style="font-weight: 600;"></td>
+            <td id="result" style="text-align: center; color: rgb(224, 76, 65); font-weight: 600 ;"></td>
+        </tr>
+    </table>
+    <script>
+        function isPrime() {
+            let number = document.getElementById("number").value;
+            if (number <= 1) {
+                document.getElementById("result").innerText = "false";
+            } else {
+                for (let i = 2; i <= Math.sqrt(number); i++) {
+                    if (number % i == 0) {
+                    document.getElementById("result").innerText = "false";
+                    return;
+                    }
+                }
+                document.getElementById("result").innerText = "true";
+            }
+        }
+    </script>
+</body>
+
+</html>
