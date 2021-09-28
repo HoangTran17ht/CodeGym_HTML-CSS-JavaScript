@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use built-in function</title>
+</head>
+<body>
+    <script>
+        // Lesson 1
+        let myColor = ["Red", "Green","White", "Black"];
+        let stringMyColor = myColor.toString();
+        document.write(`Lesson 1: "${stringMyColor}" <br>`);
+
+        // Lesson 2
+        let number = prompt(`Number: `);
+        let stringNumber = "";
+        for (const iterator of number) {
+            stringNumber += `${iterator} ${iterator % 2 == 0 ? -}`;
+        }
+        document.write(`${number} <br>`);
+        document.write(stringNumber);
+        
+    </script>
+</body>
+</html>

@@ -13,8 +13,18 @@
     <table style="background-color: rgb(252, 240, 200); margin-top: 150px; margin-left: 250px; margin-bottom: 150px;"
         border="1" width='800' cellspacing='1' cellpadding='3'>
         <tr>
-            <td colspan="2" align="center">
+            <td colspan="4" align="center">
                 <h2 style="font-size: 50px;">INPUT DATA</h2>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" width='300px' style="font-size: 30px;"><p>Min:</p></td>
+            <td>
+                <input type="number" id="min" width='100px' style="text-align: right; font-size: 40px;">
+            </td>
+            <td align="center" width='300px' style="font-size: 30px;"><p>Max:</p></td>
+            <td>
+                <input type="number" id="max" width='100' style="text-align: right; font-size: 40px;">
             </td>
         </tr>
         <tr>
@@ -22,9 +32,6 @@
             <td>
                 <input type="number" id="rowNumber" width='200px' style="text-align: right; font-size: 40px;">
             </td>
-
-        </tr>
-        <tr>
             <td align="center" width='600' style="font-size: 30px;"><p>Columns number:</p></td>
             <td>
                 <input type="number" id="colNumber" width='200' style="text-align: right; font-size: 40px;">
@@ -41,6 +48,10 @@
     <!-- Hiển thị ma trận -->
     <table id="printOutput" style="margin: 50px;" border='1' width='1000' cellspacing='1' cellpadding='3'>
     </table>
+
+    <!-- Hiển thị matrix only prime number -->
+    <table id="printMatrixOnlyPrimeNumber" style="margin: 50px;" border='1' width='1000' cellspacing='1'
+        cellpadding='3'></table>
 
     <!-- Hiển thị tổng tất cả các phần tử của ma trận -->
     <table style="margin: 50px;" border='1' width='500' cellspacing='1' cellpadding='3'>
@@ -73,25 +84,28 @@
     </table>
 
 
-    <!-- Hiển thị matrix only prime number -->
-    <table id="printMatrixOnlyPrimeNumber" style="margin: 50px;" border='1' width='1000' cellspacing='1'
-        cellpadding='3'></table>
-
-
 
 
     <script>
         function main() {
-            let n = parseInt(document.getElementById("rowNumber").value);
-            let m = parseInt(document.getElementById("colNumber").value);
-            let min = 10;
-            let max = 90;
+            let n = 5; //parseInt(document.getElementById("rowNumber").value);
+            let m = 6; //parseInt(document.getElementById("colNumber").value);
+            let min = 10;//parseInt(document.getElementById("min").value);
+            let max = 90;//parseInt(document.getElementById("max").value);
+            let matrix = [];
+            debugger;
             // Nhập ma trận:
-            let matrix = input(n, m, min, max);
+            matrix = input(n, m, matrix, min, max);
 
             // Hiển thị ma trận:
             let tableMatrix = output(n, m, matrix);
             document.getElementById("printOutput").innerHTML = tableMatrix;
+
+            // Edit matrix only prime number
+            let matrixPrime = matrix;
+            matrixPrime = editMatrixOnlyPrimeNumber(n, m, matrixPrime);
+            let tableMatrixPrime = output(n, m, matrixPrime);
+            document.getElementById("printMatrixOnlyPrimeNumber").innerHTML = tableMatrixPrime;
 
             // Tổng tất cả phần tử.
             let sumAll = calculateSumAll(n, m, matrix);
@@ -105,28 +119,15 @@
             let count = countTheNumberOfLargestNumber(matrix, largestNumber);
             document.getElementById("countTheNumberOfLargestNumber").innerHTML = count;
 
-            // Edit matrix only prime number
-            let matrixPrime = matrix;
-            matrixPrime = editMatrixOnlyPrimeNumber(n, m, matrixPrime);
-            let tableMatrixPrime = output(n, m, matrixPrime);
-            document.getElementById("printMatrixOnlyPrimeNumber").innerHTML = tableMatrixPrime;
-
-
-
-
-
-
-
-
-
+            
 
             // INPUT
-            function input() {
-                let matrix = [];
+            function input(n,m,matrix,min,max) {
+                matrix = [];
                 for (let i = 0; i < n; i++) {
                     matrix[i] = [];
                     for (let j = 0; j < m; j++) {
-                        matrix[i][j] = Math.floor(Math.random() * (90 - 10 + 1) + 10);
+                        matrix[i][j] = Math.floor(Math.random() * (max - min + 1) + min);
                     }
                 }
                 return matrix;
@@ -196,8 +197,6 @@
                 }
                 return count;
             }
-
-
 
 
         }
