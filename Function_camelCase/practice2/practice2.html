@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập tạo và sử dụng hàm 02</title>
+</head>
+<body>
+    <!-- exe 1 -->
+    <table border="1px" style="margin: 20px;">
+        <tr><th colspan="2">Bài 1: tính bình phương</th></tr>
+        <tr> 
+            <td>Number:</td>
+            <td><input type="number" id="exe1" style="text-align: right;"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="squaring()" value="Square = " style="background-color: lightgray;"></td>
+            <td id="resultExe1" style="text-align: right;"></td>
+        </tr> 
+    </table>
+
+    <!-- exe 2 -->
+    <table border="1px" style="margin: 20px;"> 
+        <tr><th colspan="2">Bài 2: tính chu vi và diện tích hình tròn</th></tr>
+        <tr>
+            <td>Radius:</td>
+            <td><input type="number" id="exe2" style="text-align: right;"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="calculateTheCircle()" value="Run" style="align-items: center; color: white; background-color: rgb(56, 96, 255);"></td>
+            <td><input type="reset" value="Reset" style="color: rgb(31, 31, 31); background-color: rgb(45, 200, 218);"></td>
+        </tr>
+        <tr>
+            <td>The circumference:</td>
+            <td id="circumference" style="text-align: right;"></td>
+        </tr>
+        <tr>
+            <td>The area: </td>
+            <td id="area" style="text-align: right;"></td>
+        </tr>
+    </table>
+
+
+    <!-- exe 3 -->
+    <table border="1px" style="margin: 20px;"> 
+        <tr><th colspan="2">Bài 3: tính giai thừa</th></tr>
+        <tr> 
+            <td>Number:</td>
+            <td><input type="number" id="exe3" style="text-align: right;"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="calculateFactorial()" value="Factorial = " style="background-color: lightgray;"></td>
+            <td id="resultExe3" style="text-align: right;"></td>
+        </tr> 
+    </table>
+
+    <!-- exe 4 -->
+    <table border="1px" style="margin: 20px;"> 
+        <tr><th colspan="2">Bài 4: Check number character</th></tr>
+        <tr> 
+            <td>Character:</td>
+            <td><input type="text" id="exe4" style="text-align: right;"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="checkNumberCharacter()" value="Check" style="background-color: lightgray;"></td>
+            <td id="resultExe4" style="text-align: center;"></td>
+        </tr> 
+    </table>
+    <!-- exe 5 -->
+    
+    <!-- exe 6 -->
+    <!-- exe 7 -->
+    <!-- exe 8 -->
+    <!-- exe 9 -->
+
+    <script src="squared.js"></script>
+    <script src="circumferenceAndAreaOfCircle.js"></script>
+    <script src="factorial.js"></script>
+    <script src="min3Number.js"></script>
+    <script src="reverseArray.js"></script>
+    <script src="swap2Numbers.js"></script>
+    <script src="isNumericCharacter.js"></script>
+    <script src="checkElementOfTheArray.js"></script>
+    <script src="checkForPositiveIntegers.js"></script>
+</body>
+</html>

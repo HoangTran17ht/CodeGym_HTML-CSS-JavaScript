@@ -32,14 +32,23 @@ function addNewProduct() {
     alert(`Đã thêm sản phẩm "${newProduct}" !`);
 
 }
-
+// Hàm delete và cập nhật lại
 function deleteProduct(i) {
-
-    var proceed = confirm("Bạn chắc chưa?");
+    var proceed = confirm(`Xóa sản phẩm ${allProduct[i]}?`);
     if (proceed) {
         del(i);
         display();
     }
+}
+
+// Hàm confirm
+function proceed(productDel) {
+    
+}
+
+// Hàm delete product
+function del(i) {
+    allProduct.splice(i, 1);
 }
 // Kiểm tra trùng lặp sản phẩm
 function exist(productName) {
@@ -58,7 +67,3 @@ function editNameProduct(i) {
     alert("Đổi tên sản phẩm thành công!");
 }
 
-// Hàm delete product
-function del(i) {
-    allProduct.splice(i, 1);
-}
