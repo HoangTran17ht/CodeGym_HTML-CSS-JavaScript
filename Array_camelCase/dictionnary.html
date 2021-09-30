@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+</head>
+<body>
+    <script>
+        let vietnamese = ["Xin chào","Cảm ơn","Xin lỗi","Tạm biệt"];
+        let english = ["Hello","Thank","Sorry","Good bye"];
+        let input = prompt("english: ");
+        function seachValue(value) {
+            return value == input;
+        }
+        let index = english.findIndex(seachValue);
+        alert(vietnamese[index]);
+    </script>
+</body>
+</html>
