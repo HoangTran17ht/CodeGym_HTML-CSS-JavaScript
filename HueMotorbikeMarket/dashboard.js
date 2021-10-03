@@ -1,11 +1,12 @@
 class Product {
-    constructor(id, motorcycleLine, color, year, kmTraveled, price, address, phoneNumber, sellerName, picture) {
+    constructor(id, motorcycleLine, year, color, kmTraveled, price, details, picture, phoneNumber, sellerName, address) {
         this.productId = id,
             this.motorcycleLine = motorcycleLine,
             this.color = color,
             this.year = year,
             this.kmTraveled = kmTraveled,
             this.price = price,
+            this.details = details,
             this.address = address,
             this.phoneNumber = phoneNumber,
             this.sellerName = sellerName,
@@ -29,7 +30,8 @@ function init() {
                 address = "Phong Điền",
                 phoneNumber = 0984453445,
                 sellerName = "Thành",
-                picture = "hondaWaveAlpha.jpg"
+                picture = "hondaWaveAlpha.jpg",
+                details = "Xe nữ đi, chăm sóc thường xuyên"
             ),
             new Product(
                 productId = 2,
@@ -41,7 +43,9 @@ function init() {
                 address = "Phong Điền",
                 phoneNumber = 0984453445,
                 sellerName = "Thành",
-                picture = "dream.jpg"
+                picture = "dream.jpg",
+                details = "Xe nữ đi, chăm sóc thường xuyên"
+
             ),
             new Product(
                 productId = 3,
@@ -53,7 +57,9 @@ function init() {
                 address = "Tp.Huế",
                 phoneNumber = 0936453445,
                 sellerName = "Trang",
-                picture = "hondaShRed.jpg"
+                picture = "hondaShRed.jpg",
+                details = "Xe nữ đi, chăm sóc thường xuyên"
+
             ), new Product(
                 productId = 4,
                 motorcycleLine = "Honda Future 125",
@@ -64,7 +70,8 @@ function init() {
                 address = "Hương Thủy",
                 phoneNumber = 0984453535,
                 sellerName = "Công",
-                picture = "future125.jpg"
+                picture = "future125.jpg",
+                details = "Xe nữ đi, chăm sóc thường xuyên"
             ), new Product(
                 productId = 5,
                 motorcycleLine = "Suzuki Gn125",
@@ -75,7 +82,8 @@ function init() {
                 address = "Tp.Huế",
                 phoneNumber = 0984455365,
                 sellerName = "Nam",
-                picture = "suzukiGn125.jpg"
+                picture = "suzukiGn125.jpg",
+                details = "Xe nữ đi, chăm sóc thường xuyên"
             ), new Product(
                 productId = 6,
                 motorcycleLine = "Suzuki Satria",
@@ -86,7 +94,8 @@ function init() {
                 address = "Phú Lộc",
                 phoneNumber = 0976497445,
                 sellerName = "Thành",
-                picture = "suzukiSatria.jpg"
+                picture = "suzukiSatria.jpg",
+                details = "Xe nữ đi, chăm sóc thường xuyên"
             ), new Product(
                 productId = 7,
                 motorcycleLine = "Yamaha Nouvo",
@@ -97,7 +106,8 @@ function init() {
                 address = "Phong Điền",
                 phoneNumber = 0984418945,
                 sellerName = "Lan",
-                picture = "yamahaNouvo.jpg"
+                picture = "yamahaNouvo.jpg",
+                details = "Xe nữ đi, chăm sóc thường xuyên"
             ), new Product(
                 productId = 8,
                 motorcycleLine = "Yamaha Exciter 135",
@@ -108,12 +118,12 @@ function init() {
                 address = "Tp.Huế",
                 phoneNumber = 0984489445,
                 sellerName = "Hải",
-                picture = "yamahaEx135.jpg"
+                picture = "yamahaEx135.jpg",
+                details = "Xe nữ đi, chăm sóc thường xuyên"
             )
         ];
         saveStoreRoom("motorcycleMarket", products);
-    } 
-    else{
+    } else {
         products = getStoreRoom("motorcycleMarket");
     }
 }
