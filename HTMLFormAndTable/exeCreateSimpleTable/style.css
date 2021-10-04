@@ -1,0 +1,32 @@
+#h3{
+    margin: auto;
+    width: 800px;
+    text-align: center;
+}
+#table1{
+    margin: auto;
+    width: 800px;
+}
+#table2{
+    margin: auto;
+    width: 800px;
+    height: 200px;
+}
+.tr1{
+    background-color: rgb(238, 242, 31);
+}
+#tr2{
+    background-color: rgb(255, 204, 0);
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+.text-center{
+    text-align: center;
+}
+.text-padding{
+    padding-left: 10px;
+}
